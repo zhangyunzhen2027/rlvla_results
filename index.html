@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimental Results</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            overflow-x: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1em;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: middle;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .task-name {
+            min-width: 300px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .trial-count, .duration, .success-rate {
+            text-align: center;
+            font-weight: 500;
+            min-width: 100px;
+        }
+
+        .video-cell {
+            text-align: center;
+            min-width: 400px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: #000;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 500px;
+            height: 281px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9em;
+            margin: 0 auto;
+            border: 2px dashed #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .success-rate {
+            font-size: 1.1em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .task-name {
+                min-width: 200px;
+            }
+
+            .video-cell {
+                min-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Experimental Results</h1>
+        
+        <div class="table-wrapper">
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Trial Count</th>
+                        <th>Duration</th>
+                        <th>Video</th>
+                        <th>Current Task Success Rate</th>
+                        <th>Success Rate Up to Current Task</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Task 0 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl on the cookie box and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="videos/rollout_pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_success.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                    
+                    <!-- Task 1 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl from table center and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="videos/rollout_pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate_success.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                    
+                    <!-- Task 2 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl on the wooden cabinet and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="videos/rollout_pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_success.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                    
+                    <!-- Task 3 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl on the stove and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <div class="video-placeholder">Video not available</div>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                    
+                    <!-- Task 4 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="videos/rollout_pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_success.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                    
+                    <!-- Task 5 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl next to the plate and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="videos/rollout_pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_success.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                    
+                    <!-- Task 6 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl next to the ramekin and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="videos/rollout_pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_success.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                    
+                    <!-- Task 7 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl next to the cookie box and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="videos/rollout_pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_success.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                    
+                    <!-- Task 8 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl on the ramekin and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <div class="video-placeholder">Video not available</div>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                    
+                    <!-- Task 9 -->
+                    <tr>
+                        <td class="task-name">Pick up the black bowl between the plate and the ramekin and place it on the plate</td>
+                        <td class="trial-count">50</td>
+                        <td class="duration">-</td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="videos/rollout_pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_success.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                        <td class="success-rate">-</td>
+                        <td class="success-rate">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.log
+*.tmp
+
+# 大型视频文件（如果不想上传到GitHub，可以取消注释）
+# videos/*.mp4
+# videos/*.mov
+# videos/*.avi
+
